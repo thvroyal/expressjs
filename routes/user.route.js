@@ -1,43 +1,16 @@
 var express = require('express');
-var db = require('../db');
 var router = express.Router();
-const shortid = require('shortid');
+var controller = require('../controllers/user.controller');
 
-router.get('/', (req,res) => {
-    res.render('user', {
-        users: db.get('users').value(),
-        key: ''
-    })
-});
+router.get('/',controller.index);
 
 //Search GET
-router.get('/search',(req,res) => {
-    var q = req.query.q;
-    var matchedUsers = db.get('users').value().filter(index => index.name.toLowerCase().indexOf(q.toLowerCase()) !== -1);
-    res.render('user',{
-        users : matchedUsers,
-        key: q
-    });
-});
+router.get('/search',controller.search);
 
 // View page
-router.get('/view/:id',(req,res) => {
-    var id = req.params.id;
-    var user = db.get('users').find({id:id}).value();
-    res.render('user/view',{
-        users: user
-    })
-})
+router.get('/view/:id',controller.profile)
 //POST create user
-router.get('/create',(req,res) => {
-    res.render('user/create');
-});
+router.get('/create',controller.createForm);
 
-router.post('/create',(req,res) => {
-    req.body.id = shortid.generate();
-    db.get('users')
-        .push(req.body)
-        .write();
-    res.redirect('/user');
-});
+router.post('/create',controller.redirectUserPage);
 module.exports = router;
