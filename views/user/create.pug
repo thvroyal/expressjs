@@ -1,7 +1,10 @@
-h1 Create New User
-form(action="/user/create", method="POST")
-    label Name
-    input(type="text", name="name", placeholder="Enter your name...")
-    label Age
-    input(type="number",name="age")
-    button Create
+extend ../layout/main
+
+block content
+        h1 Create New User
+        form(action="/user/create", method="POST", class="form-group")
+            label Name
+            input(type="text", name="name", placeholder="Enter your name...",class="form-control")
+            label Age
+            input(type="number",name="age",class="form-control",placeholder="Enter your age...")
+            button(class="btn btn-primary mt-4") Create

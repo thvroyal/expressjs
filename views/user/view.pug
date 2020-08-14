@@ -1,4 +1,12 @@
-h1 Profile
-b Name
-br
-span= users.name 
+extend ../layout/main 
+
+block content
+    h1 Profile
+    .input-group.mb-3.mt-3
+        .input-group-prepend
+            span#basic-addon1.input-group-text Name
+        input.form-control(type='text', value= users.name)
+    .input-group.mb-3.mt-2
+        .input-group-prepend
+            span#basic-addon1.input-group-text Age
+        input.form-control(type='text', value= users.age)

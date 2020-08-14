@@ -1,12 +1,15 @@
-h1 User List
-form(action="/user/search",method="GET")
-    input(type="text",name="q", value=""+key)
-    button Search
-a(href="/user/create")
-    button New
-ul
-    each user in users
-        li
-            span= user.name
-            a(href="/user/view/"+ user.id)
-                button(style="margin-left: 10px; font-size: 10px") view
+extend layout/main 
+
+block content
+    h1 User List
+    form(action="/user/search",method="GET",class="form-group d-flex")
+        input(type="text",name="q",class="form-control" value=""+key)
+        button(class="btn btn-primary ml-2") Search
+    a(href="/user/create")
+        button(class="btn btn-success mb-3") + New
+    ul(class="list-group")
+        each user in users
+            li(class="list-group-item")
+                span= user.name
+                a(href="/user/view/"+ user.id)
+                    button(class="btn btn-info btn-sm ml-2") Info
