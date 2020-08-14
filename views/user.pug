@@ -6,4 +6,7 @@ a(href="/user/create")
     button New
 ul
     each user in users
-        li= user.name
+        li
+            span= user.name
+            a(href="/user/view/"+ user.id)
+                button(style="margin-left: 10px; font-size: 10px") view
