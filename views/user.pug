@@ -2,6 +2,8 @@ h1 User List
 form(action="/user/search",method="GET")
     input(type="text",name="q", value=""+key)
     button Search
+a(href="/user/create")
+    button New
 ul
     each user in users
         li= user.name

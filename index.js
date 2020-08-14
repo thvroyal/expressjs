@@ -22,7 +22,8 @@ app.get('/', (req,res) => {
 //User
 app.get('/user', (req,res) => {
     res.render('user', {
-        users: users
+        users: users,
+        key: ''
     })
 });
 
@@ -37,5 +38,12 @@ app.get('/user/search',(req,res) => {
 });
 
 //POST create user
+app.get('/user/create',(req,res) => {
+    res.render('create');
+});
 
+app.post('/user/create',(req,res) => {
+    users.push(req.body);
+    res.redirect('/user');
+})
 app.listen(port,()=> console.log('Start server at http://localhost:'+port));
