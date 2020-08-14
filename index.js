@@ -9,7 +9,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.set('view engine','pug');
 app.set('views','./views');
-
+app.use(express.static('public'));
 //Home
 app.get('/', (req,res) => {
     res.render('index', {
