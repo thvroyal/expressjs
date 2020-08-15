@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 
 var userRouter = require('./routes/user.route');
 var authRouter = require('./routes/auth.route');
+var productRouter = require('./routes/product.route');
 
 var authValidate = require('./validate/auth.validate');
 
@@ -23,4 +24,5 @@ app.get('/', (req,res) => {
 
 app.use('/user',authValidate.authValidate,userRouter);
 app.use('/auth',authRouter);
+app.use('/product',productRouter);
 app.listen(port,()=> console.log('Start server at http://localhost:'+port));

@@ -1,0 +1,25 @@
+extend layout/main 
+
+block content
+    h1 Product
+    .row
+        each item in items
+            .col-sm-4
+                .card.mb-3
+                    img.card-img-top(src= item.image, alt='product')
+                    .card-body
+                        h5.card-title= item.name
+                        p.card-text(style="height: 100px; overflow: hidden")= item.description
+                        a.btn.btn-primary(href='#') Add to cart
+    nav
+        ul.pagination.justify-content-center
+            li.page-item(class= page<=1 ? "disabled" : "")
+                a.page-link(href='?page='+(page-1), aria-label='Previous')
+                    span(aria-hidden='true') Previous
+            each p in pag
+                if p 
+                    li.page-item
+                        a.page-link(href='?page='+p)= p
+            li.page-item(class= page>=maxPage ? "disabled": "")
+                a.page-link(href='?page='+(page+1), aria-label='Next')
+                     span(aria-hidden='true') Next
