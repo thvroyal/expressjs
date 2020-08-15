@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.set('view engine','pug');
 app.set('views','./views');
 app.use(express.static('public'));
-app.use(cookieParser())
+app.use(cookieParser('secret'));
 //Home
 app.get('/', (req,res) => {
     res.render('index', {

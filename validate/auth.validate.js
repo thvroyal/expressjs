@@ -1,13 +1,14 @@
 var db = require('../db');
 module.exports.authValidate = function(req,res,next) {
-    if (!req.cookies.userID) {
+    if (!req.signedCookies.userID) {
         res.redirect('/auth/login');
         return;
     }
-    var id = db.get('users').find({id: req.cookies.userID}).value();
-    if (!id) {
+    var user = db.get('users').find({id: req.signedCookies.userID}).value();
+    if (!user) {
         res.redirect('/auth/login');
         return;
     }
+    res.locals.user = user;
     next();
 }
