@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 var userRouter = require('./routes/user.route');
+var authRouter = require('./routes/auth.route');
+
+var authValidate = require('./validate/auth.validate');
 
 const app = express();
 const port = 3000;
@@ -20,5 +23,6 @@ app.get('/', (req,res) => {
     });
 });
 
-app.use('/user',userRouter);
+app.use('/user',authValidate.authValidate,userRouter);
+app.use('/auth',authRouter);
 app.listen(port,()=> console.log('Start server at http://localhost:'+port));

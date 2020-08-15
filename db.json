@@ -3,7 +3,9 @@
     {
       "name": "Hoang Phuc",
       "age": "14",
-      "id": "oURO5lWvv"
+      "id": "oURO5lWvv",
+      "email": "thvroyal@gmail.com",
+      "password": "123456"
     },
     {
       "name": "Nhung",
@@ -24,26 +26,6 @@
       "name": "Truong Tien Sinh",
       "age": "55",
       "id": "PajIQ0KR6"
-    },
-    {
-      "name": "",
-      "age": "",
-      "id": "CV6SS6hn5"
-    },
-    {
-      "name": "",
-      "age": "",
-      "id": "YOg_pSHml"
-    },
-    {
-      "name": "",
-      "age": "",
-      "id": "Zrbdc3MSp"
-    },
-    {
-      "name": "",
-      "age": "",
-      "id": "MubNSW_hK"
     }
   ]
 }
