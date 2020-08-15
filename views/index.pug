@@ -1,6 +1,6 @@
 extend layout/main
 
 block content
-        h1 Hello #{name}
+        h1= user ? "Hello "+user.name : "Hello guy" 
         a(href="./auth/login") 
             button(class="btn btn-primary btn-lg") Login
