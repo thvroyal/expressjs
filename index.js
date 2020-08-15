@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 var userRouter = require('./routes/user.route');
 
@@ -10,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.set('view engine','pug');
 app.set('views','./views');
 app.use(express.static('public'));
+app.use(cookieParser())
 //Home
 app.get('/', (req,res) => {
     res.render('index', {

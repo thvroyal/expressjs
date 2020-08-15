@@ -26,10 +26,10 @@ module.exports = {
             users: user
         })
     },
-    createForm: (req,res) => {
+    create: (req,res) => {
         res.render('user/create');
     },
-    redirectUserPage: (req,res) => {
+    postCreate: (req,res) => {
         req.body.id = shortid.generate();
         db.get('users')
             .push(req.body)
