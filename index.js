@@ -17,6 +17,7 @@ app.set('view engine','pug');
 app.set('views','./views');
 app.use(express.static('public'));
 app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(express.static('public'));
 //Home
 app.get('/', (req,res) => {
     res.render('index');

@@ -2,11 +2,12 @@ extend ../layout/main
 
 block content
     h1 Profile
+    img.rounded.mx-auto.d-block(src= user.avatar!="" ? "/"+ user.avatar : "https://api.adorable.io/avatars/100/"+user.name+".png",width="100")
     .input-group.mb-3.mt-3
         .input-group-prepend
             span#basic-addon1.input-group-text Name
-        input.form-control(type='text', value= users.name)
+        input.form-control(type='text', value= user.name)
     .input-group.mb-3.mt-2
         .input-group-prepend
             span#basic-addon1.input-group-text Age
-        input.form-control(type='text', value= users.age)
+        input.form-control(type='text', value= user.age)
