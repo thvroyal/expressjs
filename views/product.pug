@@ -6,11 +6,11 @@ block content
         each item in items
             .col-sm-4
                 .card.mb-3
-                    img.card-img-top(src= item.image, alt='product')
+                    img.card-img-top(src='https://placeimg.com/640/480/'+item.name, alt='product')
                     .card-body
                         h5.card-title= item.name
                         p.card-text(style="height: 100px; overflow: hidden")= item.description
-                        a.btn.btn-primary(href='#') Add to cart
+                        a.btn.btn-primary(href='/cart/add/'+ item.id) Add to cart
     nav
         ul.pagination.justify-content-center
             li.page-item(class= page<=1 ? "disabled" : "")

@@ -6,8 +6,10 @@ var cookieParser = require('cookie-parser');
 var userRouter = require('./routes/user.route');
 var authRouter = require('./routes/auth.route');
 var productRouter = require('./routes/product.route');
+var cartRouter = require('./routes/cart.route');
 
 var authValidate = require('./validate/auth.validate');
+var sessionValidate = require('./validate/session.validate');
 
 const app = express();
 const port = 3000;
@@ -18,6 +20,7 @@ app.set('views','./views');
 app.use(express.static('public'));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static('public'));
+app.use(sessionValidate);
 //Home
 app.get('/', (req,res) => {
     res.render('index');
@@ -26,4 +29,5 @@ app.get('/', (req,res) => {
 app.use('/user',authValidate.authValidate,userRouter);
 app.use('/auth',authRouter);
 app.use('/product',productRouter);
+app.use('/cart',cartRouter);
 app.listen(port,()=> console.log('Start server at http://localhost:'+port));

@@ -776,5 +776,18 @@
       "description": "sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas rhoncus aliquam lacus morbi quis tortor id nulla ultrices",
       "price": "6449.92"
     }
+  ],
+  "sessions": [
+    {
+      "id": "qa3mGwOno",
+      "cart": {
+        "19442a4d-73d8-479e-9ceb-67492ab9d1be": 7,
+        "968e36fd-8292-413e-91e0-c149a8ff0464": 1,
+        "f447523e-0814-4a1a-b131-81bfe11815a1": 1,
+        "2f2eed7b-a089-4dd9-b76e-7682304c1d06": 1,
+        "8a8daef8-104b-423b-ae2c-b2174daa4d98": 1,
+        "0f5fa157-97be-4c69-ac9e-ca44fe894d25": 1
+      }
+    }
   ]
 }

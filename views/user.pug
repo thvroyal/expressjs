@@ -10,7 +10,7 @@ block content
     ul(class="list-group")
         each user in users
             li(class="list-group-item")
-                img.rounded-circle.mr-3(src= user.avatar!="" ? user.avatar : "https://api.adorable.io/avatars/100/"+user.name+".png", width="32")
+                img.rounded-circle.mr-3(src= user.avatar!="" ? "/"+user.avatar : "https://api.adorable.io/avatars/100/"+user.name+".png", width="32")
                 span= user.name
                 a(href="/user/view/"+ user.id)
                     button(class="btn btn-info btn-sm ml-2") Info
