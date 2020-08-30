@@ -18,7 +18,7 @@ block content
                     span(aria-hidden='true') Previous
             each p in pag
                 if p 
-                    li.page-item
+                    li.page-item(class= p===page ? "active" : "")
                         a.page-link(href='?page='+p)= p
             li.page-item(class= page>=maxPage ? "disabled": "")
                 a.page-link(href='?page='+(page+1), aria-label='Next')
