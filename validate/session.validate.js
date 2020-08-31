@@ -1,16 +1,15 @@
 const shortid = require('shortid');
-const db = require('../db');
+const Session = require('../models/session.model');
 
 module.exports = function (req,res,next) {
     if (!req.signedCookies.sessionId) {
-        var sessionId = shortid.generate();
+        let currentCart = new Session;
+        let sessionId = currentCart._id;
+        console.log(sessionId);
         res.cookie("sessionId",sessionId,{
             signed: true
         });
-        db.get("sessions").push({
-            id: sessionId
-        }).write();
+        currentCart.save();
     }
-
     next();
 }

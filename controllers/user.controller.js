@@ -1,6 +1,4 @@
-var db = require('../db');
 var User = require('../models/user.model');
-const shortid = require('shortid');
 
 module.exports = {
     index: (req,res) => {
