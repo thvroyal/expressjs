@@ -13,6 +13,7 @@ var cartRouter = require('./routes/cart.route');
 
 var authValidate = require('./validate/auth.validate');
 var sessionValidate = require('./validate/session.validate');
+var updateCart = require('./controllers/cartNum.controller');
 
 const app = express();
 const port = 3000;
@@ -23,7 +24,7 @@ app.set('views','./views');
 app.use(express.static('public'));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static('public'));
-app.use(sessionValidate);
+app.use(sessionValidate,updateCart.updateCartNum);
 //Home
 app.get('/', (req,res) => {
     res.render('index');
